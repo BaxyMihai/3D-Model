@@ -1,0 +1,331 @@
+@import url("https://fonts.cdnfonts.com/css/devil-breeze"); /* Import the 'Devil Breeze' font */
+@import url("https://fonts.cdnfonts.com/css/poppins"); /* Import the 'Poppins' font */
+@import url("https://fonts.cdnfonts.com/css/bimbo"); /* Import the 'Bimbo' font */
+
+body {
+  margin: 0; /* Remove default margin around the body */
+  font-family: "Montserrat", sans-serif; /* Set the font family to Montserrat */
+  background-color: #1b1b1b; /* Set the background color of the body to dark gray */
+  color: #eef8ce; /* Set the text color to a light greenish shade */
+  font-family: "Poppins", sans-serif; /* Override previous font-family with Poppins */
+  font-size: 14px; /* Set the base font size to 14 pixels */
+  background-image: url(Image/bg.png),
+    /* Set background image to a specified URL */
+      repeating-linear-gradient(
+        /* Create a repeating linear gradient background */ to right,
+        /* Direction of the gradient */ transparent 0 500px,
+        /* Transparent section from 0 to 500px */ #73814b33 500px 501px
+          /* Semi-transparent color section from 500px to 501px */
+      );
+  background-size: 100%; /* Set background size to cover the entire element */
+}
+*::-webkit-scrollbar {
+  width: 0; /* Hide the scrollbar */
+}
+
+* {
+  padding: 0; /* Remove padding from all elements */
+  margin: 0; /* Remove margin from all elements */
+  list-style: none; /* Remove default list styles */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+html,
+body,
+main {
+  width: 100%; /* Set width of html, body, and main to 100% */
+  height: 100%; /* Set height of html, body, and main to 100% */
+}
+
+.section {
+  height: 100vh; /* Set the height of each section to 100% of the viewport height */
+  width: 100%; /* Set the width of each section to 100% */
+  min-height: 100vh; /* Ensure the minimum height is also 100% of the viewport height */
+  position: relative; /* Set position to relative for positioning child elements */
+  display: flex; /* Use flexbox layout */
+  justify-content: center; /* Center children horizontally */
+  align-items: center; /* Center children vertically */
+}
+/* CSS For Hybrid Scroll */
+.sticky-parent {
+  height: 500vh; /* Set height of sticky parent to 500% of the viewport height */
+}
+
+.sticky {
+  overflow: hidden; /* Hide overflow of sticky elements */
+  position: sticky; /* Set position to sticky */
+  top: 0; /* Stick to the top of the viewport */
+  height: 100vh; /* Set height to 100% of the viewport height */
+}
+
+.scroll-section {
+  position: absolute; /* Set position to absolute for positioning within the parent */
+  top: 0; /* Align to the top */
+  height: 100%; /* Set height to 100% of the parent */
+  width: 500vw; /* Set width to 500% of the viewport width */
+  will-change: transform; /* Optimize for expected changes */
+  display: flex; /* Use flexbox layout */
+  justify-content: space-between; /* Distribute space evenly between children */
+  align-items: center; /* Center children vertically */
+  padding: 0 5vw; /* Add horizontal padding of 5% of viewport width */
+}
+
+.scroll-section .section {
+  width: 100vw; /* Each section takes up full width of the viewport */
+}
+
+img {
+  width: 400px; /* Set default image width to 400 pixels */
+  object-fit: cover; /* Ensure images cover the area while maintaining aspect ratio */
+  object-position: center; /* Center the image within its container */
+}
+
+.content-fit {
+  width: min(
+    1200px,
+    90vw
+  ); /* Set width to the smaller of 1200 pixels or 90% of viewport width */
+  margin: auto; /* Center the element horizontally */
+  min-height: 100vh; /* Ensure minimum height is 100% of viewport height */
+  position: relative; /* Set position to relative for positioning child elements */
+  padding-block: 10em; /* Add vertical padding of 10em */
+}
+header {
+  padding-block: 1em; /* Add vertical padding of 1em to the header */
+  position: fixed; /* Fix the header position relative to the viewport */
+  top: 0; /* Align the header to the top */
+  width: 100%; /* Set header width to 100% */
+  z-index: 10px; /* Set z-index for stacking order */
+  backdrop-filter: blur(20px); /* Apply a blur effect to the background */
+  z-index: 100; /* Set z-index to 100 for stacking order */
+  background-color: #1b1b1b11; /* Set semi-transparent background color */
+  background-image: repeating-linear-gradient(
+    /* Create a repeating linear gradient background */ to right,
+    /* Direction of the gradient */ transparent 0 500px,
+    /* Transparent section from 0 to 500px */ #eee1 500px 501px
+      /* Color section from 500px to 501px */
+  );
+}
+header .content-fit {
+  display: flex; /* Use flexbox layout */
+  justify-content: space-between; /* Distribute space evenly between children */
+  align-items: center; /* Center items vertically */
+  min-height: unset !important; /* Remove minimum height restriction */
+  padding-block: unset !important; /* Remove vertical padding restriction */
+}
+header .content-fit nav ul {
+  display: flex; /* Use flexbox layout for navigation list */
+  gap: 2em; /* Add gap of 2em between navigation items */
+}
+
+#banner .title {
+  color: #d1ff48; /* Set title text color to light green */
+  font-size: 11em; /* Set title font size to 11em */
+  font-family: "devil breeze"; /* Set font family to Devil Breeze */
+  font-weight: bold; /* Set font weight to bold */
+  position: relative; /* Set position to relative for positioning child elements */
+  text-align: center; /* Center-align the title text */
+}
+#banner .title::before {
+  content: attr(
+    data-before
+  ); /* Use data attribute for content before the title */
+  position: absolute; /* Set position to absolute for positioning */
+  top: 0.5em; /* Align to 0.5em from the top */
+  inset: 0.66em 0 0 0; /* Set inset for positioning */
+  z-index: -1; /* Set z-index to -1 to place it behind other elements */
+  color: #445022; /* Set color for the before content */
+}
+.section .decorate {
+  position: absolute; /* Set position to absolute for decoration elements */
+}
+
+#banner {
+  /* Styles for the banner section (currently empty) */
+}
+
+#intro {
+  /* Styles for the intro section (currently empty) */
+}
+
+#intro .content-fit {
+  display: flex; /* Use flexbox layout for intro content */
+  gap: 30%; /* Add gap of 30% between items */
+  justify-content: space-between; /* Distribute space evenly between children */
+  align-items: center; /* Center items vertically */
+}
+.section .number {
+  font-family: "devil breeze"; /* Set font family to Devil Breeze */
+  font-size: 15em; /* Set font size for numbers to 15em */
+  font-weight: bold; /* Set font weight to bold */
+}
+.section .content-fit .title {
+  font-family: "devil breeze"; /* Set font family to Devil Breeze */
+  font-size: 5em; /* Set font size for titles to 5em */
+  font-weight: bold; /* Set font weight to bold */
+}
+#description .content-fit {
+  padding-right: 30%; /* Add right padding of 30% */
+}
+#description .number {
+  font-size: 5em; /* Set font size for description numbers to 5em */
+}
+#description .title {
+  font-size: 7em; /* Set font size for description title to 7em */
+  font-weight: 500; /* Set font weight to 500 */
+}
+#contact .content-fit {
+  display: flex; /* Use flexbox layout for contact content */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  flex-direction: column; /* Stack items vertically */
+  text-align: center; /* Center-align text */
+}
+#contact table {
+  width: min(
+    800px,
+    90vw
+  ); /* Set width to the smaller of 800 pixels or 90% of viewport width */
+  padding-top: 2em; /* Add top padding of 2em */
+  font-size: 2em; /* Set font size for table content to 2em */
+  margin: auto; /* Center table horizontally */
+}
+#contact table td {
+  padding-block: 0.5em; /* Add vertical padding of 0.5em to table cells */
+  border-bottom: 1px dashed #445022; /* Add a dashed border to the bottom of table cells */
+}
+#contact table td:nth-child(1) {
+  text-align: left; /* Align text in the first column to the left */
+  font-weight: 500; /* Set font weight to 500 */
+}
+#contact table td:nth-child(2) {
+  text-align: right; /* Align text in the second column to the right */
+  font-weight: 200; /* Set font weight to 200 */
+}
+#contact .sign {
+  font-family: "Bimbo", sans-serif; /* Set font family to Bimbo for the signature */
+  font-size: 10em; /* Set font size for the signature to 10em */
+}
+#container3D {
+  position: fixed; /* Fix position of the 3D container relative to the viewport */
+  inset: 0; /* Set all sides of the container to 0 */
+  /* background-color: red; */ /* Uncomment to set background color to red */
+  z-index: 100; /* Set z-index for stacking order */
+  pointer-events: none; /* Disable pointer events for this element */
+}
+
+#container3D {
+  position: fixed; /* Fix position of the 3D container relative to the viewport */
+  inset: 0; /* Set all sides of the container to 0 */
+  z-index: 200; /* Set z-index to 200 for stacking order */
+  pointer-events: none; /* Disable pointer events for this element */
+}
+
+@media screen and (max-width: 1023px) {
+  #banner .title {
+    font-size: 5em; /* Set title font size to 5em for smaller screens */
+  }
+  #intro .content-fit {
+    flex-direction: column; /* Change flex direction to column for smaller screens */
+  }
+  .section .number {
+    font-size: 8em; /* Adjust number size for tablet */
+  }
+
+  .section .content-fit .title {
+    font-size: 4em; /* Adjust section title size for tablet */
+  }
+
+  #description .content-fit {
+    padding-right: 15%; /* Reduce right padding to 15% for description */
+  }
+
+  #contact table {
+    font-size: 1.5em; /* Set smaller font size for table on tablet */
+  }
+
+  #contact .sign {
+    font-size: 6em; /* Adjust signature size for smaller screens */
+  }
+
+  #container3D {
+    position: absolute; /* Adjust position for tablet */
+  }
+  /* Increase size of flower and leaf images */
+  img[alt="flower"] {
+    width: 70vw !important; /* Increase flower image width to 70% of viewport width */
+  }
+  img[alt="leaf"] {
+    width: 50vw !important; /* Increase leaf image width to 50% of viewport width */
+  }
+}
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 12px; /* Decrease font size for smaller screens */
+  }
+
+  img {
+    width: 90vw; /* Set image width to 90% of viewport width */
+    height: auto; /* Maintain aspect ratio of images */
+  }
+
+  img[alt="flower"] {
+    width: 80vw; /* Adjust flower image width to 80% of viewport width */
+  }
+
+  img[alt="leaf"] {
+    width: 60vw; /* Adjust leaf image width to 60% of viewport width */
+  }
+
+  #banner .title {
+    font-size: 5em; /* Set smaller title size for mobile */
+  }
+
+  #contact table {
+    font-size: 1em; /* Set smaller table font size for mobile */
+  }
+
+  .section .number {
+    font-size: 8em; /* Set smaller number size for mobile */
+  }
+
+  #description .title {
+    font-size: 4em; /* Set smaller title size for description on mobile */
+  }
+
+  #contact .sign {
+    font-size: 5em; /* Set smaller signature size for mobile */
+  }
+
+  /* Adjust layout for mobile */
+  #intro .content-fit {
+    flex-direction: column; /* Stack elements vertically for mobile */
+    gap: 10%; /* Reduce gap between items */
+  }
+
+  header .content-fit {
+    flex-direction: column; /* Stack header items vertically for mobile */
+    align-items: center; /* Center align items in the header */
+  }
+}
+/* Additional CSS for Responsive 3D Models */
+@media screen and (max-width: 768px) {
+  #container3D {
+    width: 100vw; /* Set width to full viewport width for mobile */
+    height: 60vh; /* Adjust height to 60% of viewport height for mobile */
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  #container3D {
+    width: 100vw; /* Set width to full viewport width for tablet */
+    height: 80vh; /* Adjust height to 80% of viewport height for tablet */
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  #container3D {
+    width: 100vw; /* Set width to full viewport width for larger screens */
+    height: 100vh; /* Set height to 100% of viewport height for larger screens */
+  }
+}
